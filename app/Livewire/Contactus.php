@@ -13,7 +13,7 @@ class Contactus extends Component
     public $success;
     protected $rules = [
         'name' => 'required|min:3|max:255',
-        'email' => 'required|email|unique:contacts',
+        'email' => 'required|email',
         'message' => 'required|min:5',
     ];
     public function save()
@@ -21,13 +21,7 @@ class Contactus extends Component
         $validated = $this->validate();
         Contact::create($validated);
         $this->success = 'Your message has been sent successfully!';
-        $this->clearInputs();
-    }
-    public function clearInputs()
-    {
-        $this->name = '';
-        $this->email = '';
-        $this->message = '';
+        $this->reset(['name', 'email', 'message']);
     }
     public function render()
     {
