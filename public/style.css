@@ -1,0 +1,15 @@
+
+#form{
+    border: 1px solid;
+    width: 52%;
+    margin-left: 24%;
+    padding: 30px;
+    margin-top: 3%;
+}
+.alert-success
+{
+    width: 22%;
+    margin-left: 75%;
+    margin-top: 20px;
+
+}
